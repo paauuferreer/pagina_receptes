@@ -16,6 +16,9 @@ body, html {
 }
 
 /* HEADER */
+.menu-toggle, .menu-icon {
+    display: none;
+}
 
 .main-header {
     background-color: #f7e0d3;
@@ -98,7 +101,7 @@ body, html {
     color: #6c5a4d;
 }
 
-/*RECEPTA DESTACADA */
+/* HERO SECTION  */
 
 .hero-section {
     background-color: #F7F5F5;
@@ -162,6 +165,7 @@ body, html {
 }
 
 
+/*CATEGORY BAR */
 
 .category-bar {
     background-color: #ffffff;
@@ -201,6 +205,8 @@ body, html {
 .category-nav a:hover {
     color: #6c5a4d;
 }
+
+/* RECIPES GRID */
 
 .recipes-grid-section {
     padding: 40px 10%;
@@ -274,6 +280,9 @@ body, html {
     background-color: #e0d0c3;
     color: #1a1a1a;
 }
+
+/* NEWSLETTER CTA */
+
 .newsletter-cta {
     background-color: #d5a993; 
     padding: 60px 10%; 
@@ -349,6 +358,8 @@ body, html {
     background-color: #ffffff;
 }
 
+/*POPULAR RECIPES */
+
 .popular-recipes-section {
     padding: 60px 10%; 
     font-family: 'Inter', sans-serif;
@@ -402,10 +413,10 @@ body, html {
     margin: 5px 0 0 0;
 }
 
+/* ABOUT AUTHOR */
+
 .about-author-section {
     background-color: #d5a993; 
-    
-    
     padding: 40px 10%; 
     margin: 0; 
     width: 100%; 
@@ -464,11 +475,12 @@ body, html {
     margin: 0;
 }
 
+/* FOOTER */
 .site-footer {
     background-color: #fcece5; 
     padding: 60px 10%;
     font-family: 'Inter', sans-serif;
-    color: #f7e0d3;
+    color: #444;
 }
 
 .footer-container {
@@ -534,7 +546,6 @@ body, html {
     color: #1a4a44;
 }
 
-
 .footer-social-icons { 
     display: flex;
     gap: 10px;
@@ -561,3 +572,236 @@ body, html {
     background-color: #1a1a1a;
 }
 
+.footer-copyright {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-copyright .copyright-text {
+    font-size: 0.9em;
+    color: #777;
+    margin: 0;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+    
+    /* HEADER: MOBILE MENU IMPLEMENTATION */
+    .main-header {
+        flex-wrap: wrap;
+        padding: 10px 5%;
+        position: relative; 
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 1.8em;
+        cursor: pointer;
+        order: 2; 
+        margin-left: auto; 
+        margin-right: 15px;
+        color: #1a4a44; 
+    }
+
+    .menu-toggle {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+
+    .main-nav {
+        display: none;
+        order: 4; 
+        flex-basis: 100%; 
+        width: 100%;
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        background-color: #f7e0d3; 
+        border-top: 1px solid #e0d0c3; 
+        box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+        padding: 10px 0;
+    }
+
+    .main-nav ul {
+        flex-direction: column; 
+        width: 100%;
+    }
+
+    .main-nav li {
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid #e0d0c3; 
+        text-align: center;
+    }
+
+    .main-nav li:last-child {
+        border-bottom: none;
+    }
+    
+    .main-nav a {
+        padding: 12px 20px;
+    }
+
+    .menu-toggle:checked ~ .main-nav {
+        display: block;
+        z-index: 1000;
+    }
+
+    .profile-icon {
+        order: 3;
+        margin-left: 0; 
+    }
+    
+    /* HERO SECTION */
+
+    .hero-section {
+        flex-direction: column;
+        padding: 40px 5%;
+        text-align: center;
+    }
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    .hero-title {
+        font-size: 2.5em;
+    }
+    .hero-image-container {
+        width: 100%;
+        max-width: 400px;
+        height: 250px;
+    }
+
+    /* CATEGORY BAR */
+
+    .category-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 5%;
+    }
+    .category-nav ul {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    /* RECIPES GRID */
+
+    .recipes-grid-section {
+        padding: 40px 5%;
+    }
+    .recipes-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .recipe-card {
+        max-width: 100%;
+        min-width: unset;
+    }
+    .card-image-placeholder {
+        height: 300px;
+    }
+
+    /* NEWSLETTER */
+
+    .newsletter-cta {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 40px 5%; 
+        padding: 40px 5%;
+    }
+    .cta-content {
+        max-width: 100%;
+        margin-bottom: 25px;
+    }
+    .cta-form {
+        flex-direction: column;
+        background: none;
+        border: none;
+        padding: 0;
+        gap: 10px;
+    }
+    .cta-input, .cta-submit-button {
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 20px;
+        background-color: #fcece5;
+    }
+    .cta-input {
+        border-radius: 20px;
+        padding: 12px 15px;
+    }
+ 
+    /* POPULAR RECIPES */
+
+    .popular-recipes-section {
+        padding: 40px 5%;
+    }
+    .popular-grid {
+        grid-template-columns: 1fr; 
+    }
+
+    /* ABOUT AUTHOR*/
+
+    .about-author-section {
+        flex-direction: column;
+        align-items: left;
+        text-align: left
+        padding: 30px 5%;
+        width: 100%; 
+        box-sizing: border-box; 
+        gap: 20px; 
+    }
+    .author-info {
+        max-width: 100%; 
+        width: 100%;
+        text-align: left;
+        box-sizing: border-box;
+        padding: 0 10px; 
+    }
+    .author-bio {
+        text-align: left;
+        white-space: normal; 
+    }
+    
+  /* FOOTER */
+
+    .site-footer {
+        padding: 40px 5%;
+    }
+    .footer-container {
+        flex-direction: column; 
+        align-items: center;
+        gap: 30px;
+    }
+    .footer-left-content {
+        align-items: center;
+        gap: 25px; 
+        width: 100%;
+    }
+    .footer-nav-links {
+        text-align: center;
+    }
+    .footer-nav-links ul {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .social-icon-circle {
+     width: 30px;
+     height: 30px;
+     background-color: #444; 
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     text-decoration: none;
+        color: #ffffff; 
+        font-size: 0.9em; 
+     font-weight: 500;
+    transition: background-color 0.3s;
+    }
+    
+}
